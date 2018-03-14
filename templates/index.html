@@ -11,20 +11,28 @@
 
 <body>
   <div class="container" >
+    <a href="{{ mars.featured_image_url }}" target="_blank">
     <div class="jumbotron text-center " style = 'background-image: url({{ mars.featured_image_url }});'>
-      <h1>MARS</h1>
+      <h1 style='color: grey'>MARS</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape!</a></p>
     </div>
+    </a>
   </div>
   <div class="container" >  
     <!-- surf data -->
     <div class="row" >
-      <div class="col-md-8 col-md-offset-2" >
+      <div class="col-md-8 col-md-offset-2">
           <h2>The Mars Report</h2>
         <!--<img src= {{ mars.featured_image_url }} width: 50% />-->
           <div class="col-sm-6 col-xs-12" >
-            <h3>{{ mars.news_title }}</h3>
-              <p>{{ mars.news_p }}</p>
+            <div class = 'row'>
+              <h3>{{ mars.news_title }}</h3>
+                <p>{{ mars.news_p }}</p>
+            </div>
+            <div class = 'row'>
+                <h3>Martian Date & Weather</h3>
+                <p>{{ mars.weather }}</p>
+            </div>
           </div>
           <div class="col-sm-6 col-xs-12" >
               {{mars.table_html|safe}}
@@ -32,6 +40,7 @@
         </div>
           
     </div>
+
     <div class='row text-center'>
       <div class='col-sm-5 col-sm-offset-3'>
         <h2>Hemispheres</h2>
@@ -47,7 +56,7 @@
         </div>
       </div>
       
-      <div class='col-sm-5 col-xs-10 col-xs-offset-1'>
+      <div class='col-sm-5 col-xs-10 col-sm-offset-0 col-xs-offset-1'>
         <div class="panel m-top-75">
           <h3>Schiaparelli</h3>
           <img src= {{mars.hemisphere_imgs.schiaparelli}} width=100%>
@@ -65,7 +74,7 @@
           </div>
         </div>
         
-        <div class='col-sm-5 col-xs-10 col-xs-offset-1'>
+        <div class='col-sm-5 col-xs-10 col-sm-offset-0 col-xs-offset-1'>
           <div class="panel m-top-75">
             <h3>Valles Marineris</h3>
             <img src= {{mars.hemisphere_imgs.valles_marineris}} width=100%>
@@ -75,7 +84,11 @@
       </div>
 
   </div>
+<style>
+  .table: {
 
+  }
+</style>
 </body>
 </html>
 
