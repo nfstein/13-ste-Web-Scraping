@@ -46,7 +46,7 @@ def scrape():
     border_pat = re.compile(r'border="."') #just for fun and a little formatting
     class_pat = re.compile(r'class=""')
     table_html = table_html.replace(border_pat.search(table_html).group(), '')
-    table_html = table_html.replace(class_pat.search(table_html).group(), '')
+    table_html = table_html.replace(class_pat.search(table_html).group(), 'style="color: black"')
     table_html
     '''url = 'https://space-facts.com/mars/'
     dfs = pd.read_html(url)

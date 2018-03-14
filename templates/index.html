@@ -12,8 +12,10 @@
 <body>
   <div class="container" >
     <a href="{{ mars.featured_image_url }}" target="_blank">
-    <div class="jumbotron text-center " style = 'background-image: url({{ mars.featured_image_url }});'>
-      <h1 style='color: grey'>MARS</h1>
+    <div class="jumbotron text-center " style = 'background-image: url({{ mars.featured_image_url }}); background-size: cover;'>
+      <a href = "https://en.wikipedia.org/wiki/Mars">
+        <h1 style='color: grey'>MARS</h1>
+      </a>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape!</a></p>
     </div>
     </a>
@@ -26,16 +28,22 @@
         <!--<img src= {{ mars.featured_image_url }} width: 50% />-->
           <div class="col-sm-6 col-xs-12" >
             <div class = 'row'>
-              <h3>{{ mars.news_title }}</h3>
-                <p>{{ mars.news_p }}</p>
+              <a href = "https://mars.nasa.gov/news/">
+                <h3 style='color: black' >{{ mars.news_title }}</h3>
+              </a>
+              <p>{{ mars.news_p }}</p>
             </div>
             <div class = 'row'>
-                <h3>Martian Date & Weather</h3>
+                <a href = "https://twitter.com/marswxreport">
+                  <h3 style='color: black'>Martian Date & Weather</h3>
+                </a>
                 <p>{{ mars.weather }}</p>
             </div>
           </div>
           <div class="col-sm-6 col-xs-12" >
+            <a href = "https://space-facts.com/mars/" >
               {{mars.table_html|safe}}
+            </a>
           </div>
         </div>
           
@@ -43,7 +51,9 @@
 
     <div class='row text-center'>
       <div class='col-sm-5 col-sm-offset-3'>
-        <h2>Hemispheres</h2>
+        <a href = "https://en.wikipedia.org/wiki/Geography_of_Mars">
+          <h2 style='color: black'>Hemispheres</h2>
+        </a>  
       </div>
     </div>
 
